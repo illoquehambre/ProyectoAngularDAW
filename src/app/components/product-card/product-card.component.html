@@ -1,0 +1,11 @@
+<div class="card  my-4 ">
+    <img [src]="product.image" class="card-img-top" alt="{{ product.name }}">
+    <div class="card-body">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text">{{ product.description }}</p>
+        <p class="card-text text-primary">$ {{ product.price}}</p>
+        <span class="badge" [class.bg-success]="product.active === true" [class.bg-danger]="product.active === false">
+            {{ product.active ? 'Disponible' : 'Agotado' }}
+        </span>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<section>
+  <app-product-filter 
+    [products]="products" 
+    (filterProductsEvent)="onFilterProducts($event)">
+  </app-product-filter>
+
+  <div class="container mt-4">
+    <div class="row g-4">
+      @for (product of filteredProducts; track product._id) {
+        <div class="col-12 col-sm-6 col-md-4">
+          <app-product-card [product]="product"></app-product-card>
+        </div>
+      } @empty {
+        <p>No hay productos disponibles.</p>
+      }
+    </div>
+  </div>
+</section>
